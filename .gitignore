@@ -1,0 +1,44 @@
+/node_modules
+/bak
+
+# /dist  
+# /.env
+# /.env.local
+# /.env.development
+# /.env.test 
+# /.env.production
+# /coverage
+# .DS_Store   
+# *.log
+# *.lock 
+
+# # Ignore IDE specific files
+# /.idea
+# /.vscode
+# # Ignore OS specific files
+# Thumbs.db
+# Desktop.ini
+# # Ignore build artifacts
+# /build
+# # Ignore test coverage reports
+# /coverage
+# # Ignore npm debug logs
+# npm-debug.log*
+# # Ignore yarn debug logs
+# yarn-debug.log*
+# yarn-error.log*
+# # Ignore lock files
+# package-lock.json
+# yarn.lock
+# # Ignore generated files
+# /dist
+# # Ignore environment variable files
+# .env
+# .env.local
+# .env.development
+# .env.test
+# .env.production
+# # Ignore other files
+# *.log
+# *.lock
+# .DS_Store
