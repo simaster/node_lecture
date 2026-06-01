@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <script src="/js/home/login.js"></script>
+    <script src="/js/home/login.js" defer></script> 
+    <!-- 로그인 페이지의 JavaScript 파일을 로드합니다.  -->
+    <!-- defer 속성은 HTML 문서의 파싱이 완료된 후에 스크립트가 실행되도록 합니다. , async 속성은 스크립트가 비동기적으로 로드되고 실행되도록 합니다. , defer와 async는 함께 사용할 수 없습니다. defer는 스크립트가 HTML 문서의 파싱이 완료된 후에 실행되도록 보장하지만, async는 스크립트가 로드되는 즉시 실행되도록 합니다. 따라서 둘 중 하나를 선택하여 사용해야 합니다. -->
 
     <title>Document</title>
 </head>
 <body>
-    <input type="text" placeholder="Username"></br>
-    <input type="text" placeholder="Password"></br>
-    <button>Login</button>
+    <input id="id" type="text" placeholder="Username"></br>
+    <input id="pw" type="text" placeholder="Password"></br>
+    <button id="login-btn">Login</button>
 </body>
 </html>
