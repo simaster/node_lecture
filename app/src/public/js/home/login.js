@@ -25,8 +25,22 @@ function login() {
   body: JSON.stringify(req),
 })
   .then((res) => res.json())
+  .then((res) => {
+    if (res.success) {
+      location.href = "/"; // 로그인 성공 시 홈 페이지로 이동
+
+    } else {
+      alert("Login failed: " + res.message); // 로그인 실패 시 메시지 표시
+    }
+  })
+  .catch((err) => {
+    // console.error("Error during login:", err);
+    console.error(new Error("Login error: " + err.message));
+    alert("An error occurred during login. Please try again.");
+  });
+
   // .then((res) => console.log(res));
-  .then(console.log);
+  // .then(console.log);
 }
 
 
