@@ -1,14 +1,50 @@
 "use strict";
 
-const c_home  = (req, res) => {
-  res.render('home/index');
+const output = {
+  c_home: (req, res) => {
+    res.render('home/index');
+  },                                 // 객체이니까 ,로 구분하여 여러 함수를 정의할 수 있다.
+  c_login: (req, res) => {
+    res.render('home/login');
+  }
+};
+
+const users = {
+  id: ["admin", "user1", "user2"],
+  pw: ["1234", "1234", "1234"]
 }
 
-const c_login = (req, res) => {
-  res.render('home/login');
-}
+const process = {
+  loginPost: (req, res) => {
+    const id = req.body.id;
+    const pw = req.body.pw;
+    if (users.id.includes(id)) {
+      const idx = users.id.indexOf(id);
+      if (users.pw[idx] === pw) {
+        console.log("Login successful for id:", id);
+        res.json({ success: true, message: "Login successful" });
+      }
+
+      else {
+        console.log("Login failed for id:", id);
+        res.status(401).json({ success: false, message: "Invalid credentials" });
+      }
+      
+    }
+    // return res.json({ success: false, message: "Invalid credentials" });
+
+   }
+
+    // if (users.id.includes(id) && users.pw.includes(pw)) {
+    //   console.log("Login successful for id:", id);
+    //   res.json({ success: true, message: "Login successful" });
+    // } else { 
+    //   console.log("Login failed for id:", id);
+    //   res.status(401).json({ success: false, message: "Invalid credentials" });
+    // }
+};
 
 module.exports = {
-  home: c_home,
-  login: c_login,
+  output,
+  process
 };

@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "body-parser": "^2.2.2",
     "ejs": "^6.0.1",
     "express": "^5.2.1"
   },
@@ -10,14 +11,13 @@
   "bin": {
     "0527_01": "bin/www.js"
   },
-  "devDependencies": {},
   "scripts": {
     "start": "nodemon ./bin/www.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC", 
+  "license": "ISC",
   "type": "commonjs",
   "repository": {
     "type": "git",
