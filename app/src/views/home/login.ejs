@@ -7,12 +7,29 @@
     <script src="/js/home/login.js" defer></script> 
     <!-- 로그인 페이지의 JavaScript 파일을 로드합니다.  -->
     <!-- defer 속성은 HTML 문서의 파싱이 완료된 후에 스크립트가 실행되도록 합니다. , async 속성은 스크립트가 비동기적으로 로드되고 실행되도록 합니다. , defer와 async는 함께 사용할 수 없습니다. defer는 스크립트가 HTML 문서의 파싱이 완료된 후에 실행되도록 보장하지만, async는 스크립트가 로드되는 즉시 실행되도록 합니다. 따라서 둘 중 하나를 선택하여 사용해야 합니다. -->
-
+    <link rel="stylesheet" href="/css/home/login.css">
     <title>Document</title>
 </head>
 <body>
-    <input id="id" type="text" placeholder="Username"></br>
+    <div class="login-page">
+  <div class="form">
+    <form class="register-form">
+      <input type="text" placeholder="name"/>
+      <input type="password" placeholder="password"/>
+      <input type="text" placeholder="email address"/>
+      <button>create</button>
+      <p class="message">Already registered? <a href="#">Sign In</a></p>
+    </form>
+    <form class="login-form">
+      <input id="id"type="text" placeholder="username"/>
+      <input id="pw" type="password" placeholder="password"/>
+      <button id="login-btn">login</button>
+      <p class="message">Not registered? <a href="#">Create an account</a></p>
+    </form>
+  </div>
+</div>
+    <!-- <input id="id" type="text" placeholder="Username"></br>
     <input id="pw" type="text" placeholder="Password"></br>
-    <button id="login-btn">Login</button>
+    <button id="login-btn">Login</button> -->
 </body>
 </html>
