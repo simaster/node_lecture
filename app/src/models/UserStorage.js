@@ -22,16 +22,20 @@ class UserStorage {
     // console.log(newUsers);
     return newUsers;
     }
+ 
+    static getUserInfo(id) {
+    const users = this.#users;
+    const idx = users.id.indexOf(id);
+    const userKeys = Object.keys(users); // => ["id", "pw", "name"]
+    const userInfo = userKeys.reduce((newUser, info) => {
+      newUser[info] = users[info][idx];
+      return newUser;
+    }, {});
+    return userInfo;
   }
+}
   
-//   getUserById(id) {
-//     return this.users.find(user => user.id === id);
-//   }
 
-//   validateUser(id, pw) {
-//     const user = this.getUserById(id);
-//     return user && user.pw === pw;
-//   }
 
 
 module.exports = UserStorage;
