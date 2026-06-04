@@ -4,17 +4,27 @@
 // console.log("login.js loaded successfully");
 
 const id = document.querySelector("#id"), // id input 요소 선택
+    name = document.querySelector("#name"), // name input 요소 선택
     pw = document.querySelector("#pw"), // pw input 요소 선택
     confirmPw = document.querySelector("#confirm-pw"), // confirm pw input 요소 선택
     registerBtn = document.querySelector("#login-btn"); // login 버튼 요소 선택
 
 registerBtn.addEventListener("click", register);
 function register() {  
+  if (!id.value || !name.value || !pw.value || !confirmPw.value) {
+    alert("Please fill in all fields.");
+    return;
+  }
+  if (pw.value !== confirmPw.value) {   // 비밀번호와 확인 비밀번호가 일치하지 않는 경우, .value const로 선언하기 전에 사용  
+    alert("Passwords do not match.");
+    return;
+  }
+
   const req = {
     id: id.value,
     name: name.value,
     pw: pw.value,
-    confirmPw: confirmPw.value,
+    // confirmPw: confirmPw.value,
   };
   console.log("Register request:", req);
 
@@ -34,6 +44,7 @@ function register() {
       alert("Register failed: " + res.message); // 등록 실패 시 메시지 표시
     }
   })
+
   .catch((err) => {
     // console.error("Error during register:", err);
     console.error(new Error("Register error: " + err.message));
@@ -45,15 +56,3 @@ function register() {
 }
 
 
-
-
-
-// const loginBtn = document.querySelector("#login-btn"); // login 버튼 요소 선택
-// loginBtn.addEventListener("click", function() {
-//     console.log("Login button clicked");}
-// );
-
-// console.log("id:", id);
-// console.log(id);
-// console.log("pw:", pw);
-// console.log("loginBtn:", loginBtn);

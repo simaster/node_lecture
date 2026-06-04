@@ -17,7 +17,10 @@ const ctrl = require('./home.ctrl');
 router.get('/', ctrl.output.c_home);
 router.get('/login', ctrl.output.c_login);
 router.get('/register', ctrl.output.c_register);
+
 router.post('/login', ctrl.process.loginPost);
+router.post('/register', ctrl.process.registerPost);
+
 
 
 // router.get('/login', (req, res) => {

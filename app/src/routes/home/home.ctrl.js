@@ -19,14 +19,19 @@ const output = {
 const process = {
   loginPost: (req, res) => {
 
-    // const id = req.body.id;
-    // const pw = req.body.pw;   
-
     const user = new User(req.body);
     const response = user.login_user();
     console.log(response);
     return res.json(response);
+  },
+
+  registerPost: (req, res) => {
+    const user = new User(req.body);
+    const response = user.register_user();
+    // console.log(response);
+    return res.json(response);
   }
+
 };
 
 module.exports = {
