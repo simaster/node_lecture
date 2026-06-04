@@ -40,6 +40,7 @@ class UserStorage {
     users.name.push(userInfo.name);
     users.pw.push(userInfo.pw);
     console.log(users);
+    return { success: true };
   }
 }
   

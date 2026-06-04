@@ -28,7 +28,9 @@ class User {
   register_user() {
     const client = this.body;
     UserStorage.saver(client);
-    return { success: true };
+    const response = UserStorage.saver(client);
+    return response;
+    // return { success: true };
   }
   // register_user() {
   //   const body = this.body;
