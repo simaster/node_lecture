@@ -10,6 +10,9 @@ const output = {
   },                                 // 객체이니까 ,로 구분하여 여러 함수를 정의할 수 있다.
   c_login: (req, res) => {
     res.render('home/login');
+  },
+  c_register: (req, res) => {
+    res.render('home/register');
   }
 };
 
