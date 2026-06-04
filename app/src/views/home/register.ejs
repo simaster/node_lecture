@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <script src="/js/home/login.js" defer></script> 
+    <script src="/js/home/register.js" defer></script> 
     <!-- 로그인 페이지의 JavaScript 파일을 로드합니다.  -->
     <!-- defer 속성은 HTML 문서의 파싱이 완료된 후에 스크립트가 실행되도록 합니다. , async 속성은 스크립트가 비동기적으로 로드되고 실행되도록 합니다. , defer와 async는 함께 사용할 수 없습니다. defer는 스크립트가 HTML 문서의 파싱이 완료된 후에 실행되도록 보장하지만, async는 스크립트가 로드되는 즉시 실행되도록 합니다. 따라서 둘 중 하나를 선택하여 사용해야 합니다. -->
     <link rel="stylesheet" href="/css/home/login.css">
@@ -17,8 +17,8 @@
       <input id="id"type="text" placeholder="아이디"/>
       <input id="name" type="text" placeholder="이름"/>
       <input id="pw" type="password" placeholder="비밀번호"/>
-      <input id="pw-confirm" type="password" placeholder="비밀번호 확인"/>
-      <button id="login-btn">Sign UP</button>
+      <input id="confirm-pw" type="password" placeholder="비밀번호 확인"/>
+      <p id="login-btn">Sign UP</p>
       <p class="message">Already registered? <a href="/login">Login</a></p>
     </form>
   </div>
