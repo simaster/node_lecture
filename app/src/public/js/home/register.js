@@ -17,6 +17,7 @@ function register() {
     confirmPw: confirmPw.value,
   };
   console.log("Register request:", req);
+
   fetch("/register", {
   method: "POST",
   headers: {
@@ -27,7 +28,7 @@ function register() {
   .then((res) => res.json())
   .then((res) => {
     if (res.success) {
-      location.href = "/"; // 등록 성공 시 홈 페이지로 이동
+      location.href = "/login"; // 등록 성공 시 로그인 페이지로 이동
 
     } else {
       alert("Register failed: " + res.message); // 등록 실패 시 메시지 표시
