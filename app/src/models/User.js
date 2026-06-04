@@ -1,7 +1,7 @@
 "use strict";
 
 // const UserStorage = require("../../models/UserStorage");
-
+const { response } = require("express");
 const UserStorage = require("./UserStorage");
 
 
@@ -24,12 +24,14 @@ class User {
       return { success: false, message: "아이디가 존재하지 않습니다." };
   }
 
-  register_user() {
+  async register_user() {
     const client = this.body;
-    UserStorage.saver(client);
-    const response = UserStorage.saver(client);
-    return response;
-    // return { success: true };
+    try {
+      const response = await UserStorage.saver(client);
+      return response;
+    } catch (err) {
+      return { success: false, msg: err };
+    }
   }
   // register_user() {
   //   const body = this.body;
@@ -41,15 +43,5 @@ class User {
   //   return { success: true };
   // }
 }
-
-
-// class User {
-//   constructor(id, pw, name) {
-//     this.id = id;
-//     this.pw = pw;
-//     this.name = name;
-//   }
-// }
-
 module.exports = User;
 
