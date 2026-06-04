@@ -10,12 +10,11 @@ class User {
     this.body = body;
   }
 
-  login_user() {
-    // const { id, pw } = UserStorage.getUsers("id", "pw");
-    // const a = UserStorage.getUserInfo("1");
+  async login_user() {
     const client = this.body;
-    const { id, pw } = UserStorage.getUserInfo(this.body.id);
-    // console.log(a);
+    // console.log(await UserStorage.getUserInfo(client.id)); // await는 promise가 resolve될 때까지 기다린다. async 함수 안에서만 사용할 수 있다.
+    const { id, pw } = await UserStorage.getUserInfo(client.id);
+
     if (id) {
       if (id === client.id && pw === client.pw) {
         return { success: true };

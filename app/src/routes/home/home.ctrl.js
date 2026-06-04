@@ -17,10 +17,9 @@ const output = {
 };
 
 const process = {
-  loginPost: (req, res) => {
-
+  loginPost: async (req, res) => {           // async는 함수 앞에서 ...
     const user = new User(req.body);
-    const response = user.login_user();
+    const response = await user.login_user();
     console.log(response);
     return res.json(response);
   },
