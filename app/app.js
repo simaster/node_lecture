@@ -4,11 +4,19 @@
 // 모듈
 const express = require('express');
 const bodyparser = require('body-parser');
+const dotenv = require("dotenv");
+dotenv.config();
+// const path = require('path');
+// // load .env from repository root (project root is one level up from this app folder)
+// dotenv.config({ path: path.join(__dirname, '../.env') });
 
-// 앱 세팅
+// 앱 port
 const app = express();
-const port = 3000; 
+// const port = 3000; 
 
+
+// 라우팅
+// const home = require('./src/routes/home'); // 라우터 등록
 const root = require('./src/routes/home'); // 라우터 등록
 
 // 앱 세팅

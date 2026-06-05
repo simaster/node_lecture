@@ -1,10 +1,11 @@
 "use strict";
 
 const app = require('../app');
-const port = 3000; 
+const PORT = process.env.PORT || 3000;
+// const PORT = 3000;
 
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
-}); 
+app.listen(PORT, () => {
+  console.log(`Example app listening at http://localhost:${PORT}`);
+});
 
 
