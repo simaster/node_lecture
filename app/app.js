@@ -6,8 +6,8 @@ const express = require('express');
 const bodyparser = require('body-parser');
 const dotenv = require("dotenv");
 const morgan = require('morgan');
-// const fs = require("fs");
-const path = require('path');
+
+// const path = require('path');
 
 // 앱 port
 const app = express();
@@ -18,19 +18,11 @@ dotenv.config();
 const accessLogStream = require("./src/config/log");
 
 // 라우팅
-// const home = require('./src/routes/home'); // 라우터 등록
 const root = require('./src/routes/home'); // 라우터 등록
 
-const logger = require("./src/config/logger");
-// logger.log("info", "heloo simaster!");
-logger.error("hello simaster!");
+// const logger = require("./src/config/logger");
+// logger.error("hello simaster!");
 
-
-// const accessLogStream = fs.createWriteStream(
-//     `${__dirname}/log/access.log`,
-//     // path.join(__dirname, 'log', 'access.log'),
-//     { flags: 'a' }
-// );
 
 // 앱 세팅
 //app.set('views', __dirname + '/views');
