@@ -22,7 +22,7 @@ const db = mysql.createConnection({
 
 // console.log(DB_HOST)
 
-console.log(db)
+// console.log(db)
 db.connect();
 
 module.exports = db;
