@@ -33,7 +33,7 @@ class User {
       return { success: false, message: "아이디가 존재하지 않습니다." };
       
     } catch (err) {
-      return { success: false, msg: err };
+      return { success: false, err };  //msg: err 비교
     }
   }
 
@@ -43,7 +43,7 @@ class User {
       const response = await UserStorage.saver(client);
       return response;
     } catch (err) {
-      return { success: false, msg: err };
+      return { success: false, err };
     }
   }
   // register_user() {
