@@ -21,6 +21,11 @@ const accessLogStream = require("./src/config/log");
 // const home = require('./src/routes/home'); // 라우터 등록
 const root = require('./src/routes/home'); // 라우터 등록
 
+const logger = require("./src/config/logger");
+// logger.log("info", "heloo simaster!");
+logger.error("hello simaster!");
+
+
 // const accessLogStream = fs.createWriteStream(
 //     `${__dirname}/log/access.log`,
 //     // path.join(__dirname, 'log', 'access.log'),
